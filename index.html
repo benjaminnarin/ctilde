@@ -1,39 +1,70 @@
 <!doctype html>
-
+<link rel="shortcut icon" href="img/favicon.gif" type="image/x-icon" />
 <script>
   'use strict';
 
   var config = {
     categories: [
-      { name: "Education", commands: [
-        { key: 'c', name: 'Coursera', url: 'https://www.coursera.org', search: '/courses?query=' },
-        { key: 'e', name: 'Egghead', url: 'https://egghead.io', search: '/search?q=' },
-        { key: 'K', name: 'Khan Academy', url: 'https://www.khanacademy.org', search: '/search?page_search_query=' },
-        { key: 'w', name: 'Wikipedia', url: 'https://en.wikipedia.org', search: '/wiki/' },
-      ] },
-      { name: "Media", commands: [
-        { key: 's', name: 'SoundCloud', url: 'https://soundcloud.com', search: '/search?q=' },
-        { key: 'u', name: 'Unsplash', url: 'https://unsplash.com', search: '/search?keyword=' },
-        { key: 'y', name: 'YouTube', url: 'https://www.youtube.com', search: '/results?search_query=' },
-        { key: 'Y', name: 'YTS', url: 'https://yts.ag', search: '/browse-movies/' },
-      ] },
-      { name: "News", commands: [
-        { key: 'h', name: 'Hacker News', url: 'https://hn.algolia.com', search: '/?query=' },
-        { key: 'p', name: 'Product Hunt', url: 'https://www.producthunt.com', search: '/search?q=' },
-        { key: 'r', name: 'Reddit', url: 'https://www.reddit.com', search: '/search?q=' },
-        { key: 'T', name: 'Codrops', url: 'http://tympanus.net/codrops', search: '/?search-type=posts&s=' },
-      ] },
-      { name: "Social", commands: [
-        { key: 'i', name: 'Inbox', url: 'https://inbox.google.com', search: '/search/' },
-        { key: 'f', name: 'Facebook', url: 'https://www.facebook.com', search: '/search/top/?q=' },
-        { key: 'I', name: 'Instagram', url: 'https://www.instagram.com' },
-        { key: 't', name: 'Twitter', url: 'https://twitter.com', search: '/search?q=' },
-      ] },
-      { name: "Tools", commands: [
-        { key: 'd', name: 'Drive', url: 'https://drive.google.com/drive', search: '/search?q=' },
-        { key: 'g', name: 'GitHub', url: 'https://github.com', search: '/search?q=' },
-        { key: 'k', name: 'Keep', url: 'https://keep.google.com', search: '/#search/text=' },
-      ] },
+			{ name: "Social Media", commands: [
+			  { key: 'f', name: 'Facebook', url: 'https://facebook.com', search: '/search/top/?q=' },
+				{ key: 'g', name: 'Gmail', url: 'https://mail.google.com/mail/u/0/#inbox', search: '/search/' },
+			  { key: 'o', name: 'Onid', url: 'https://mail.google.com/mail/u/1/#inbox', search: '/search/' },
+			  { key: 'l', name: 'LinkedIn', url: 'https://www.linkedin.com/', search: '/search/top/?q=' },
+			] },
+			{ name: "Media", commands: [
+				{ key: 'y', name: 'Youtube', url: 'https://youtube.com', search: '/results?search_query=' },
+				{ key: 'S', name: 'SoundCloud', url: 'https://soundcloud.com', search: '/search?q=' },
+				{ key: 's', name: 'Spotify', url: 'https://play.spotify.com', search: '/search/top/?q=' },
+				{ key: 'p', name: 'Plex', url: 'https://plex.tv', search: '/search/top/?q=' },
+			] },
+			{ name: "Tech News", commands: [
+				{ key: 'r', name: 'Reddit', url: 'https://reddit.com', search: '/search?q=' },
+				{ key: 'a', name: 'Ars Technica', url: 'https://arstechnica.com', search: '/search?q=' },
+				{ key: 'e', name: 'Engadget', url: 'https://engadget.com', search: '/search?q=' },
+				{ key: 'A', name: 'AnandTech', url: 'https://anandtech.com', search: '/search?q=' },
+				{ key: 'w', name: 'Wired', url: 'https://wired.com', search: '/search?q=' },
+			] },
+			{ name: "News", commands: [
+				{ key: 'cn', name: 'CNN', url: 'http://cnn.com', search: '/search?q=' },
+				{ key: 'nyt', name: 'New York Times', url: 'https://nytimes.com', search: '/search?q=' },
+				{ key: 'rwn', name: 'World News', url: 'https://reddit.com/r/worldnews/', search: '/search?q=' },
+				{ key: 'ns', name: 'News', url: 'https://reddit.com/r/news/', search: '/search?q=' },
+			] },
+			{ name: "Programming", commands: [
+				{ key: 'gh', name: 'GitHub', url: 'https://github.com', search: '/search?q=' },
+				{ key: 'b', name: 'Bitbucket', url: 'https://bitbucket.org', search: '/search?q=' },
+				{ key: 'so', name: 'StackOverflow', url: 'https://stackoverflow.com', search: '/search?q=' },
+			] },
+
+      // { name: "Education", commands: [
+      //   { key: 'c', name: 'Coursera', url: 'https://www.coursera.org', search: '/courses?query=' },
+      //   { key: 'e', name: 'Egghead', url: 'https://egghead.io', search: '/search?q=' },
+      //   { key: 'K', name: 'Khan Academy', url: 'https://www.khanacademy.org', search: '/search?page_search_query=' },
+      //   { key: 'w', name: 'Wikipedia', url: 'https://en.wikipedia.org', search: '/wiki/' },
+      // ] },
+      // { name: "Media", commands: [
+      //   { key: 's', name: 'SoundCloud', url: 'https://soundcloud.com', search: '/search?q=' },
+      //   { key: 'u', name: 'Unsplash', url: 'https://unsplash.com', search: '/search?keyword=' },
+      //   { key: 'y', name: 'YouTube', url: 'https://www.youtube.com', search: '/results?search_query=' },
+      //   { key: 'Y', name: 'YTS', url: 'https://yts.ag', search: '/browse-movies/' },
+      // ] },
+      // { name: "News", commands: [
+      //   { key: 'h', name: 'Hacker News', url: 'https://hn.algolia.com', search: '/?query=' },
+      //   { key: 'p', name: 'Product Hunt', url: 'https://www.producthunt.com', search: '/search?q=' },
+      //   { key: 'r', name: 'Reddit', url: 'https://www.reddit.com', search: '/search?q=' },
+      //   { key: 'T', name: 'Codrops', url: 'http://tympanus.net/codrops', search: '/?search-type=posts&s=' },
+      // ] },
+      // { name: "Social", commands: [
+      //   { key: 'i', name: 'Inbox', url: 'https://inbox.google.com', search: '/search/' },
+      //   { key: 'f', name: 'Facebook', url: 'https://www.facebook.com', search: '/search/top/?q=' },
+      //   { key: 'I', name: 'Instagram', url: 'https://www.instagram.com' },
+      //   { key: 't', name: 'Twitter', url: 'https://twitter.com', search: '/search?q=' },
+      // ] },
+      // { name: "Tools", commands: [
+      //   { key: 'd', name: 'Drive', url: 'https://drive.google.com/drive', search: '/search?q=' },
+      //   { key: 'g', name: 'GitHub', url: 'https://github.com', search: '/search?q=' },
+      //   { key: 'k', name: 'Keep', url: 'https://keep.google.com', search: '/#search/text=' },
+      // ] },
     ],
 
     // if none of the keys are matched, this is used for searching.
@@ -76,7 +107,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 
-<title>~</title>
+<!-- <title>~</title> -->
 
 <style type="text/css">
   @font-face {
@@ -161,7 +192,11 @@
 
   .search-suggestion:hover,
   .search-suggestion:focus {
-    background: #30a388;
+		/*Original Color*/
+    /*background: #30a388;*/
+		/*Top Color*/
+		background: #4c7899;
+
   }
 
   .overlay {
@@ -201,9 +236,15 @@
     margin: 0;
     padding: 14px;
     border-radius: 2px 2px 0 0;
-    background: #30a388;
-    color: #165b4b;
-    font-size: .7rem;
+		/*Original Color*/
+		/*background: #30a388;*/
+		/*Top Color*/
+    background: #769ebb;
+		/*Top Text Color*/
+		/*color: #165b4b; */
+		/*Top Text Color*/
+		color: #222;
+		font-size: .7rem;
     text-transform: uppercase;
     text-align: center;
   }
@@ -285,9 +326,11 @@
     var setTime = function() {
       var date = new Date();
       var hours = pad(date.getHours());
+			var ampm = hours >= 12 ? 'pm' : 'am';
+			var hour_12 = hours % 12
       var minutes = pad(date.getMinutes());
 
-      clock.innerHTML = hours + config.clockDelimiter + minutes;
+      clock.innerHTML = hour_12 + config.clockDelimiter + minutes;
     }
 
     setTime();
